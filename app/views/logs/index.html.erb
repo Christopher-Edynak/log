@@ -1,0 +1,38 @@
+<% content_for :title do %>
+  BP Log&ndash; <%= DateTime.now.to_s(:pretty_date) %>
+<% end %>
+
+<div class="columns mt-6 is-centered">
+  <% @logs.each do |log| %>
+    <div class="column is-one-quarter">
+      <div class="card">
+        <header class="card-header has-text-weight-bold">
+          &ensp;&emsp;<%= log.entry %>
+        </header>
+        <div class="card-content">
+          <div class="content">
+            <p><span class="has-text-weight-bold">Time Stamp:</span>&nbsp;<%= log.created_at.to_s(:preferred_timedate) %></p>
+            <p><span class="has-text-weight-bold">Systolic:</span>&nbsp;<%= log.systolic %></p>
+            <p><span class="has-text-weight-bold">Diastolic:</span>&nbsp;<%= log.diastolic %></p>
+            <p><span class="has-text-weight-bold">Pulse:</span>&nbsp;<%= log.pulse %></p>
+            <p><span class="has-text-weight-bold">Feelings:</span>&nbsp;<%= log.feelings %></p>
+            <p><span class="has-text-weight-bold">Meds Deployed:</span>&nbsp;<%= log.meds %></p>
+            <p><span class="has-text-weight-bold">Actions:</span>&nbsp;<%= log.actions %></p>
+            <p><span class="has-text-weight-bold">Notes:</span>&nbsp;<%= log.notes %></p>
+            <p class="italic">Created <%= time_ago_in_words(log.created_at) %></p>
+          </div>
+        </div>
+        <div class="card-footer">
+          <%= link_to 'View', log, class: "card-footer-item" %>
+          <%= link_to 'Edit', edit_log_path(log), class: "card-footer-item" %>
+          <%= link_to 'Delete', log, method: :delete, data: { confirm: 'Are you sure?' }, class: "card-footer-item" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+<br>
+<div class="columns is-centered mt-6">
+  <%= link_to 'Register New Log', new_log_path, class: "button is-link" %>&emsp;
+  <%= link_to 'View All Logs', archives_index_path, class: "button is-warning" %>
+</div>

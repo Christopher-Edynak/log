@@ -1,0 +1,52 @@
+#ecalendar .calendar {
+  margin-top: 50px;
+  border-collapse: collapse;
+  width: 100%;
+
+  td,
+  th {
+    font-family: 'Lucida Grande', Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    padding: 6px;
+    border: 1px solid #000;
+  }
+
+  th {
+    background: #0057b8;
+    color: #fff;
+    text-align: center;
+    width: 10%;
+  }
+
+  td {
+    background: #fff;
+    color: #000;
+    height: 150px;
+    vertical-align: top;
+    font-size: 16px;
+  }
+
+  .notmonth {
+    color: #ccc;
+  }
+  .today {
+    background-color: #d7f2ff;
+  }
+}
+
+#ecalendar #month {
+  margin: 0;
+  padding-top: 25px;
+  padding-bottom: 10px;
+  text-align: center;
+  a {
+    text-decoration: none;
+    padding: 0 10px;
+    color: #777;
+  }
+}
+
+#ecalendar ul {
+  font-size: 11px;
+  padding-left: 20px;
+}

@@ -1,0 +1,65 @@
+<%= form_with(model: log) do |form| %>
+  <% if log.errors.any? %>
+    <div class="message is-danger">
+      <div class="message-header">
+        <p><%= pluralize(log.errors.count, "error") %> prohibited this log from being saved:</p>
+      </div>
+      <div class="message-body">
+        <ul>
+          <% log.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :entry, class: "label" %>
+    <%= form.text_field :entry, class: "input" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :time, class: "label" %>
+    <%= form.datetime_select :time, class: "input" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :systolic, class: "label" %>
+    <%= form.number_field :systolic, class: "input" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :diastolic, class: "label" %>
+    <%= form.number_field :diastolic, class: "input" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pulse, class: "label" %>
+    <%= form.number_field :pulse, class: "input" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :feelings, class: "label" %>
+    <%= form.text_field :feelings, class: "input" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :meds, class: "label" %>
+    <%= form.text_area :meds, class: "input" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :actions, class: "label" %>
+    <%= form.text_area :actions, class: "input" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :notes, class: "label" %>
+    <%= form.text_area :notes, class: "input" %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class: "button is-warning" %>
+  </div>
+<% end %>

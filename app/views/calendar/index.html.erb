@@ -1,0 +1,14 @@
+<div class="container">
+  <div id="ecalendar">
+    <%= calendar do |date| %>
+      <%= date.day %>
+        <% if @logs_by_date[date] %>
+          <ul>
+            <% @logs_by_date[date].each do |log| %>
+              <li><%= link_to log.id, log %></li>
+            <% end %>
+          </ul>
+        <% end %>
+    <% end %>
+  </div>
+</div>

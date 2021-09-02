@@ -1,0 +1,28 @@
+<div class="columns is-centered mt-6">
+  <div class="column is-half">
+    <% @logs.each do |day, logs| %>
+      <h3 class="is-size-4 has-text-weight-bold mb-4 has-text-centered">Logs for <%= day %></h3>
+
+      <% logs.each do |log| %>
+        <%= link_to log_path(log) do %>
+          <div class="card">
+            <div class="card-content">
+              <strong><%= log.entry %></strong><br>
+              Systolic: <%= log.systolic %>
+              Diastolic: <%= log.diastolic %>
+              Pulse: <%= log.pulse %>
+              Feelings: <%= log.feelings %>
+              Meds Deployed: <%= log.meds %>
+              Actions Taken: <%=log.actions %>
+              Additional Notes: <%= log.notes %>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+<div class="columns is-centered mt-6">
+  <%= link_to 'Register New Log', new_log_path, class: "button is-link" %>&emsp;
+  <%= link_to 'Back', root_path, class: "button is-warning" %>
+</div>

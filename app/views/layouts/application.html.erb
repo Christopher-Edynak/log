@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PapaDoc Blood Pressure Log</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= render "shared/nav" %>
+    <% if notice.present? %>
+      <div class="notification is-success is-light"><%= notice %></div>
+    <% end %>
+
+    <% if alert.present? %>
+      <div class="notification is-danger is-light"><%= alert %></div>
+    <% end %>
+    <%= render "shared/hero" %>
+    <div class="container">
+      <%= yield %>
+    </div>
+  </body>
+</html>

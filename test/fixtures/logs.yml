@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  entry: MyString
+  time: 2021-09-01 07:28:39
+  systolic: 1
+  diastolic: 1
+  pulse: 1
+  feelings: MyString
+  meds: MyText
+  actions: MyText
+  notes: MyText
+
+two:
+  entry: MyString
+  time: 2021-09-01 07:28:39
+  systolic: 1
+  diastolic: 1
+  pulse: 1
+  feelings: MyString
+  meds: MyText
+  actions: MyText
+  notes: MyText

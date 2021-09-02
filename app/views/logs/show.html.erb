@@ -1,0 +1,47 @@
+<% content_for :title do %>
+  <%= @log.entry %> &ndash; <%= DateTime.now.to_s(:pretty_date) %>
+<% end %>
+
+<div class="columns mt-6 is-centered">
+  <div class="column is-one-third">
+    <nav class="panel is-link">
+      <p class="panel-heading">
+        <%= @log.entry %>
+      </p>
+
+      <div class="panel-block">
+        DateTime Stamp: <%= @log.time %>
+      </div>
+      <div class="panel-block">
+        Systolic: <%= @log.systolic %>
+      </div>
+      <div class="panel-block">
+        Diastolic: <%= @log.diastolic %>
+      </div>
+      <div class="panel-block">
+        Pulse: <%= @log.pulse %>
+      </div>
+      <div class="panel-block">
+        Feelings: <%= @log.feelings %>
+      </div>
+      <div class="panel-block">
+        Meds Deployed: <%= @log.meds %>
+      </div>
+      <div class="panel-block">
+        Actions Taken: <%= @log.actions %>
+      </div>
+      <div class="panel-block">
+        Additional Notes: <%= @log.notes %>
+      </div>
+    </nav>
+
+    <div class="columns is-mobile">
+      <div clas="column">
+        <%= link_to 'Edit', edit_log_path(@log), class: "button is-warning" %> 
+        <%= link_to 'Back', logs_path, class: "button is-link" %>
+        <%= link_to 'Delete', log_path(@log), method: :delete, data: { confirm: "Are you sure?" }, class: "button is-danger" %>
+      </div>
+      <div class="column"></div>
+    </div>
+  </div>
+</div>
